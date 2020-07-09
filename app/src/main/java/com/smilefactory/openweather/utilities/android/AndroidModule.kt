@@ -1,4 +1,4 @@
-package com.smilefactory.openweather.utilities.di
+package com.smilefactory.openweather.utilities.android
 
 import android.content.Context
 import com.smilefactory.openweather.Application

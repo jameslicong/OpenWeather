@@ -1,4 +1,4 @@
-package com.smilefactory.openweather.utilities.di
+package com.smilefactory.openweather.utilities.android
 
 import com.smilefactory.openweather.Application
 import dagger.Component
