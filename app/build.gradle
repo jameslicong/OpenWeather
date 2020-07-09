@@ -1,17 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
         applicationId "com.smilefactory.openweather"
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -22,18 +23,55 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation libraries.kotlinStdLib
+    implementation libraries.androidXCore
+    implementation libraries.androidXAppCompat
+    implementation libraries.androidXContraintLayout
+    implementation libraries.androidXLifeCycleExtensions
+    implementation libraries.androidXLifeCycleViewModel
+
+    // Dagger 2
+    api libraries.dagger
+    api(libraries.daggerAndroidSupport) {
+        exclude group: 'com.google.code.findbugs'
+    }
+
+    kapt libraries.daggerCompiler
+    kapt libraries.daggerProcessor
+
+    // GSON
+    implementation libraries.gson
+
+    // OkHttp
+    implementation libraries.okHttpLogging
+
+    // Retrofit
+    implementation libraries.retrofit
+    implementation libraries.retrofitGsonConverter
+
+    // RxJava and Android
+    implementation libraries.rxAndroid
+    implementation libraries.rxJava
+
+    // Timber Logging
+    implementation libraries.timber
+
+
+    testImplementation testLibraries.espresso
+    androidTestImplementation testLibraries.junit
+    androidTestImplementation testLibraries.junitExt
 
 }
