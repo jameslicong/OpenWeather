@@ -1,6 +1,7 @@
 package com.smilefactory.openweather.utilities.android
 
 import com.smilefactory.openweather.Application
+import com.smilefactory.openweather.utilities.UtilitiesModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -9,7 +10,8 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidInjectionModule::class,
-        AndroidModule::class
+        AndroidModule::class,
+        UtilitiesModule::class
     ]
 )
 @Singleton
