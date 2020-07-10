@@ -1,9 +1,16 @@
 package com.smilefactory.openweather.repository.remote
 
+import com.smilefactory.openweather.repository.remote.api.ApiModule
+import com.smilefactory.openweather.repository.remote.loader.RemoteLoaderModule
 import dagger.Binds
 import dagger.Module
 
-@Module
+@Module(
+    includes = [
+        ApiModule::class,
+        RemoteLoaderModule::class
+    ]
+)
 abstract class RemoteModule {
 
     @Binds
