@@ -67,6 +67,11 @@ dependencies {
     implementation libraries.retrofitGsonConverter
     implementation libraries.retrofitRxJavaAdapter
 
+    // Room Database Persistent
+    implementation libraries.room
+    implementation libraries.roomRxJava
+    kapt libraries.roomProcessor
+
     // RxJava and Android
     implementation libraries.rxAndroid
     implementation libraries.rxJava
