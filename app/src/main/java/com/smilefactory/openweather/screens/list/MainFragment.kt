@@ -1,4 +1,4 @@
-package com.smilefactory.openweather.ui.main
+package com.smilefactory.openweather.screens.list
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -11,7 +11,8 @@ import com.smilefactory.openweather.R
 class MainFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() =
+            MainFragment()
     }
 
     private lateinit var viewModel: MainViewModel

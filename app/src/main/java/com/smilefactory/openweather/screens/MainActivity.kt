@@ -1,8 +1,9 @@
-package com.smilefactory.openweather
+package com.smilefactory.openweather.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.smilefactory.openweather.ui.main.MainFragment
+import com.smilefactory.openweather.R
+import com.smilefactory.openweather.screens.list.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
