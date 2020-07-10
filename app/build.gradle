@@ -65,6 +65,7 @@ dependencies {
     // Retrofit
     implementation libraries.retrofit
     implementation libraries.retrofitGsonConverter
+    implementation libraries.retrofitRxJavaAdapter
 
     // RxJava and Android
     implementation libraries.rxAndroid
