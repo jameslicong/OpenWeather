@@ -18,7 +18,7 @@ interface WeatherApi {
 
     @GET("weather")
     fun getDetails(
-        @Query("p") city: String,
+        @Query("q") city: String,
         @Query("appid") apiKey: String = BuildConfig.API_KEY
     ): Single<WeatherForecast>
 }
