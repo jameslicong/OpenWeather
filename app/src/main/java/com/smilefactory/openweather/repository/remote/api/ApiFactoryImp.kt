@@ -1,15 +1,18 @@
 package com.smilefactory.openweather.repository.remote
 
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.smilefactory.openweather.BuildConfig
+import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import io.reactivex.rxjava3.core.Single
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
-class ApiFactoryImp : ApiFactory {
+class ApiFactoryImp
+    @Inject
+    internal constructor() : ApiFactory {
 
     override fun <T> create(apiClass: Class<T>): Single<T> {
         return retrofit()
@@ -18,7 +21,6 @@ class ApiFactoryImp : ApiFactory {
 
     private fun intoRetrofit(client: OkHttpClient): Single<Retrofit> {
         return Single.fromCallable {
-
             val loggingInterceptor = HttpLoggingInterceptor()
             loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -26,7 +28,7 @@ class ApiFactoryImp : ApiFactory {
                 .baseUrl(BuildConfig.SERVER_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .build()
         }
     }
@@ -53,5 +55,4 @@ class ApiFactoryImp : ApiFactory {
     private fun retrofit(): Single<Retrofit> {
         return client().flatMap { intoRetrofit(it) }
     }
-
 }
