@@ -1,4 +1,4 @@
-package com.smilefactory.openweather.repository.remote
+package com.smilefactory.openweather.repository.remote.api
 
 import io.reactivex.rxjava3.core.Single
 

@@ -1,4 +1,4 @@
-package com.smilefactory.openweather.repository.remote
+package com.smilefactory.openweather.repository.remote.api
 
 import com.smilefactory.openweather.BuildConfig
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
@@ -10,9 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class ApiFactoryImp
-    @Inject
-    internal constructor() : ApiFactory {
+class ApiFactoryImp @Inject internal constructor() : ApiFactory {
 
     override fun <T> create(apiClass: Class<T>): Single<T> {
         return retrofit()
