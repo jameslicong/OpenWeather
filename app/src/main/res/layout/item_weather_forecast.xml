@@ -9,7 +9,6 @@
         android:layout_margin="@dimen/screen_margin_extra_small">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/screen_margin_small">
