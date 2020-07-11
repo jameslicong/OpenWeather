@@ -16,6 +16,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        // puts the exported Room database schema into a directory
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+
         buildConfigField "String", "SERVER_URL", "\"https://api.openweathermap.org/data/2.5/\""
         buildConfigField "String", "API_KEY", "\"829f17f48a23d16806bee898545e6593\""
         buildConfigField "int", "DATABASE_VERSION", versions.database
