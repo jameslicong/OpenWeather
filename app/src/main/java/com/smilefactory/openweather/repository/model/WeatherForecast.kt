@@ -3,23 +3,22 @@ package com.smilefactory.openweather.repository.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import com.smilefactory.openweather.repository.model.WeatherForecast.Companion.TABLE_NAME
 
-@Entity(tableName = TABLE_NAME)
+@Entity(tableName = WeatherForecast.TABLE_NAME)
 data class WeatherForecast(
 
     @PrimaryKey
-    val id: Long,
-    val coord: Coord,
-    val sys: Sys,
-    val weather: List<Weather>,
-    val main: Main,
-    val visibility: Long,
-    val wind: Wind,
-    val clouds: Clouds,
-    val dt: Long,
-    val name: String,
-    val isFavorite: Boolean = false
+    var id: Long,
+    var coord: Coord,
+    var sys: Sys,
+    var weather: ArrayList<Weather>,
+    var main: Main,
+    var visibility: Long,
+    var wind: Wind,
+    var clouds: Clouds,
+    var dt: Long,
+    var name: String,
+    var isFavorite: Boolean = false
 
 ) {
     companion object {
