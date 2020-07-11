@@ -18,6 +18,8 @@ android {
 
         buildConfigField "String", "SERVER_URL", "\"https://api.openweathermap.org/data/2.5/\""
         buildConfigField "String", "API_KEY", "\"829f17f48a23d16806bee898545e6593\""
+        buildConfigField "int", "DATABASE_VERSION", versions.database
+        buildConfigField "String", "DATABASE_NAME", "\"" + versions.databaseName + "\""
     }
 
     buildTypes {
