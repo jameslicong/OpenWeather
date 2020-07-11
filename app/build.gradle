@@ -55,6 +55,9 @@ dependencies {
     implementation libraries.androidXContraintLayout
     implementation libraries.androidXLifeCycleExtensions
     implementation libraries.androidXLifeCycleViewModel
+    implementation libraries.androidXRecyclerView
+    implementation libraries.androidXSwipeRefreshLayout
+    implementation libraries.androidXCardView
 
     // Dagger 2
     api libraries.dagger
