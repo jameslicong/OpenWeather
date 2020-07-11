@@ -59,6 +59,7 @@ dependencies {
     implementation libraries.androidXSwipeRefreshLayout
     implementation libraries.androidXCardView
 
+    implementation libraries.googleMaterialDesign
     // Dagger 2
     api libraries.dagger
     api(libraries.daggerAndroidSupport) {
