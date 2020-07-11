@@ -9,5 +9,5 @@ abstract class ListModule {
 
     @FragmentScope
     @ContributesAndroidInjector
-    abstract fun weatherForecaseListFragment(): WeatherForecastListFragment
+    abstract fun weatherForecastListFragment(): WeatherForecastListFragment
 }
