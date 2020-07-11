@@ -5,13 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.smilefactory.openweather.R
-import com.smilefactory.openweather.databinding.FragmentWeatherForcastListBinding
+import com.smilefactory.openweather.databinding.FragmentWeatherForecastListBinding
 import dagger.android.support.DaggerFragment
 import timber.log.Timber
 import javax.inject.Inject
@@ -21,7 +18,7 @@ class WeatherForecastListFragment : DaggerFragment() {
     @Inject
     lateinit var viewModel: WeatherForecastListViewModel
 
-    private lateinit var binding: FragmentWeatherForcastListBinding
+    private lateinit var binding: FragmentWeatherForecastListBinding
 
     private lateinit var adapters: WeatherForecastListAdaper
 
