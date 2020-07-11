@@ -11,4 +11,7 @@ interface WeatherForecastDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(weatherForecast: WeatherForecast)
 
+    @Query("SELECT * FROM $TABLE_NAME")
+    fun all(): Single<List<WeatherForecast>>
+
 }
