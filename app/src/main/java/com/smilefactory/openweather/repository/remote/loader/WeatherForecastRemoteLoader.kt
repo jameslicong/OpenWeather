@@ -6,4 +6,6 @@ import io.reactivex.rxjava3.core.Single
 interface WeatherForecastRemoteLoader {
 
     fun list(): Single<List<WeatherForecast>>
+
+    fun details(city: String): Single<WeatherForecast>
 }
