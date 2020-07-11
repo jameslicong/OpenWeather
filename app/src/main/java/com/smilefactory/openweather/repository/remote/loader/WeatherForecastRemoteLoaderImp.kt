@@ -3,7 +3,8 @@ package com.smilefactory.openweather.repository.remote.loader
 import com.smilefactory.openweather.repository.model.WeatherForecast
 import com.smilefactory.openweather.repository.remote.api.ApiFactory
 import com.smilefactory.openweather.repository.remote.api.WeatherApi
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
+
 import javax.inject.Inject
 
 class WeatherForecastRemoteLoaderImp

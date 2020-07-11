@@ -1,6 +1,7 @@
 package com.smilefactory.openweather.repository.remote.api
 
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
+
 
 interface ApiFactory {
 

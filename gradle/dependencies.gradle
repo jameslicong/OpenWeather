@@ -23,10 +23,10 @@ ext.versions = [
         joda                         : '2.10',
         okHttpLogging                : '4.6.0',
         retrofit                     : '2.6.1',
-        retrofitRxJavaAdapter        : '3.0.0',
+        retrofitRxJavaAdapter        : '2.8.1',
         room                         : '2.2.5',
-        rxAndroid                    : '3.0.0',
-        rxJava                       : '3.0.3',
+        rxAndroid                    : '2.1.1',
+        rxJava                       : '2.2.19',
         timber                       : '4.7.1',
 
         // Test libraries
@@ -56,12 +56,12 @@ ext.libraries = [
         okHttpLogging                               : "com.squareup.okhttp3:logging-interceptor:$versions.okHttpLogging",
         retrofit                                    : "com.squareup.retrofit2:retrofit:$versions.retrofit",
         retrofitGsonConverter                       : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
-        retrofitRxJavaAdapter                       : "com.github.akarnokd:rxjava3-retrofit-adapter:$versions.retrofitRxJavaAdapter",
+        retrofitRxJavaAdapter                       : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofitRxJavaAdapter",
         room                                        : "androidx.room:room-runtime:$versions.room",
         roomProcessor                               : "androidx.room:room-compiler:$versions.room",
         roomRxJava                                  : "androidx.room:room-rxjava2:$versions.room",
-        rxAndroid                                   : "io.reactivex.rxjava3:rxandroid:$versions.rxAndroid",
-        rxJava                                      : "io.reactivex.rxjava3:rxjava:$versions.rxjava",
+        rxAndroid                                   : "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+        rxJava                                      : "io.reactivex.rxjava2:rxjava:$versions.rxjava",
         timber                                      : "com.jakewharton.timber:timber:$versions.timber",
 ]
 

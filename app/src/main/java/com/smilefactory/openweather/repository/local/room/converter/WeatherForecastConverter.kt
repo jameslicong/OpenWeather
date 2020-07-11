@@ -1,4 +1,4 @@
-package com.smilefactory.openweather.repository.local.converter
+package com.smilefactory.openweather.repository.local.room.converter
 
 import androidx.room.TypeConverter
 import com.google.gson.reflect.TypeToken

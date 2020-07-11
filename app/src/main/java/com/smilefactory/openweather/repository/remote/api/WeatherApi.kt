@@ -3,7 +3,7 @@ package com.smilefactory.openweather.repository.remote.api
 import com.smilefactory.openweather.BuildConfig
 import com.smilefactory.openweather.repository.model.WeatherForecast
 import com.smilefactory.openweather.repository.model.WeatherForecastList
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 

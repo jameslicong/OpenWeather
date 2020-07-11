@@ -1,9 +1,10 @@
 package com.smilefactory.openweather.utilities.rx
 
-import io.reactivex.rxjava3.core.CompletableTransformer
-import io.reactivex.rxjava3.core.FlowableTransformer
-import io.reactivex.rxjava3.core.ObservableTransformer
-import io.reactivex.rxjava3.core.SingleTransformer
+import io.reactivex.CompletableTransformer
+import io.reactivex.FlowableTransformer
+import io.reactivex.ObservableTransformer
+import io.reactivex.SingleTransformer
+
 
 interface RxSchedulerUtils {
 

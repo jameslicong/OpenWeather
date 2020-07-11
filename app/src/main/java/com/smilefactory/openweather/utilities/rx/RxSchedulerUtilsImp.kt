@@ -1,11 +1,12 @@
 package com.smilefactory.openweather.utilities.rx
 
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.CompletableTransformer
-import io.reactivex.rxjava3.core.FlowableTransformer
-import io.reactivex.rxjava3.core.ObservableTransformer
-import io.reactivex.rxjava3.core.SingleTransformer
-import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.CompletableTransformer
+import io.reactivex.FlowableTransformer
+import io.reactivex.ObservableTransformer
+import io.reactivex.SingleTransformer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+
 
 class RxSchedulerUtilsImp : RxSchedulerUtils {
 

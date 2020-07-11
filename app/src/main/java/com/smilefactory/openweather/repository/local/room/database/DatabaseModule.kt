@@ -1,4 +1,4 @@
-package com.smilefactory.openweather.repository.local.database
+package com.smilefactory.openweather.repository.local.room.database
 
 import androidx.room.Room
 import com.smilefactory.openweather.Application
