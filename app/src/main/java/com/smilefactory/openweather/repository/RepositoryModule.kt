@@ -14,5 +14,10 @@ import dagger.Module
 abstract class RepositoryModule {
 
     @Binds
-    internal abstract fun bindWeatherForecastLoader(loader: WeatherForecastLoaderImp): WeatherForecastLoader
+    internal abstract fun bindWeatherForecastLoader(
+        loader: WeatherForecastLoaderImp): WeatherForecastLoader
+
+    @Binds
+    internal abstract fun bindWeatherForecastUpdater(
+        updater: WeatherForecastUpdaterImp): WeatherForecastUpdater
 }
