@@ -13,4 +13,10 @@ class WeatherForecastLocalSaverImp
             dao.insert(weatherForecast)
         }
     }
+
+    override fun asFavorite(isFavorite: Boolean, cityName: String): Completable {
+        return Completable.fromAction {
+            dao.asFavorite(isFavorite, cityName)
+        }
+    }
 }

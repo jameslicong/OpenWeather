@@ -6,4 +6,6 @@ import io.reactivex.Completable
 interface WeatherForecastLocalSaver {
 
     fun add(weatherForecast: WeatherForecast): Completable
+
+    fun asFavorite(isFavorite: Boolean, cityName: String): Completable
 }
