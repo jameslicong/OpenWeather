@@ -24,6 +24,17 @@ class WeatherForecastLoaderImp
 
     }
 
+    override fun details(cityName: String): Single<WeatherForecast> {
+        return remoteLoader.details(cityName)
+            .flatMapCompletable { item -> saveOrUpdate(item) }
+            .onErrorComplete()
+            .andThen(localLoader.byName(cityName))
+    }
+
+    override fun localDetails(cityName: String): Single<WeatherForecast> {
+        return localLoader.byName(cityName)
+    }
+
     private fun saveOrUpdate(weatherForecase: WeatherForecast): Completable {
         return localLoader.byName(weatherForecase.name)
             .map {
