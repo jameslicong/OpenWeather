@@ -17,4 +17,7 @@ interface WeatherForecastDao {
     @Query("SELECT * FROM $TABLE_NAME WHERE name =:name")
     fun byName(name: String): Single<WeatherForecast>
 
+    @Query("UPDATE $TABLE_NAME SET isFavorite =:isFavorite WHERE name =:name")
+    fun asFavorite(isFavorite: Boolean, name: String)
+
 }
