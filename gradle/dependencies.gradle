@@ -33,6 +33,7 @@ ext.versions = [
 
         // Test libraries
         espresso                     : '3.2.0',
+        dataFactory                  : '0.8',
         junit                        : '4.12',
         junitExt                     : '1.1.1'
 ]
@@ -74,6 +75,7 @@ ext.libraries = [
 
 ext.testLibraries = [
         espresso                                    : "androidx.test.espresso:espresso-core:$versions.espresso",
+        dataFactory                                 : "org.fluttercode.datafactory:datafactory:$versions.dataFactory",
         junit                                       : "junit:junit:$versions.junit",
         junitExt                                    : "androidx.test.ext:junit:$versions.junitExt",
 ]
