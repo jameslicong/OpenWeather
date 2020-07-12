@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.smilefactory.openweather.R
 import com.smilefactory.openweather.databinding.FragmentWeatherForecastListBinding
+import com.smilefactory.openweather.screens.details.WeatherForecastDetailsFragment
 import dagger.android.support.DaggerFragment
 import timber.log.Timber
 import javax.inject.Inject
@@ -70,6 +71,12 @@ class WeatherForecastListFragment : DaggerFragment() {
     }
 
     private fun onSelectedCity(cityName: String) {
-        Timber.d("$cityName I choose")
+        activity?.let {
+            it.supportFragmentManager.beginTransaction()
+                .replace(R.id.container, WeatherForecastDetailsFragment.getFragment(cityName))
+                .addToBackStack(null)
+                .commit()
+            it
+        }
     }
 }
