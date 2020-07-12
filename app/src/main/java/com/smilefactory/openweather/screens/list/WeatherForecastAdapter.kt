@@ -1,6 +1,7 @@
 package com.smilefactory.openweather.screens.list
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
@@ -53,11 +54,11 @@ class WeatherForecastViewHolder(private val binding: ItemWeatherForecastBinding)
                 getBackgroundColorBasedOnTemperature(main.temp))
 
             if (isFavorite) {
+                binding.favorite.visibility = View.VISIBLE
                 binding.favorite.setImageDrawable(
                     ContextCompat.getDrawable(binding.root.context, R.drawable.ic_heart_favorite_24))
             } else {
-                binding.favorite.setImageDrawable(
-                    ContextCompat.getDrawable(binding.root.context, R.drawable.ic_heart_unfavorite_24))
+                binding.favorite.visibility = View.INVISIBLE
             }
 
             itemView.setOnClickListener {
