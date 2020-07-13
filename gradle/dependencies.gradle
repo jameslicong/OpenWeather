@@ -35,7 +35,12 @@ ext.versions = [
         espresso                     : '3.2.0',
         dataFactory                  : '0.8',
         junit                        : '4.12',
-        junitExt                     : '1.1.1'
+        junitExt                     : '1.1.1',
+        mockito                      : '3.4.0',
+        mockWebServer                : '4.8.0',
+        robolectric                  : '4.3.1',
+        supportTestRunner            : '1.1.0'
+
 ]
 
 ext.gradlePlugins = [
@@ -78,4 +83,14 @@ ext.testLibraries = [
         dataFactory                                 : "org.fluttercode.datafactory:datafactory:$versions.dataFactory",
         junit                                       : "junit:junit:$versions.junit",
         junitExt                                    : "androidx.test.ext:junit:$versions.junitExt",
+        mockito                                     : "org.mockito:mockito-core:$versions.mockito",
+        mockitoAndroid                              : "org.mockito:mockito-android:$versions.mockito",
+        mockitoInline                               : "org.mockito:mockito-inline:$versions.mockito",
+        mockWebServer                               : "com.squareup.okhttp3:mockwebserver:$versions.mockWebServer",
+        robolectric                                 : "org.robolectric:robolectric:$versions.robolectric",
+        room                                        : "androidx.room:room-testing:$versions.room",
+        testCore                                    : "androidx.test:core:$versions.supportTestRunner",
+        testOrchestrator                            : "androidx.test:orchestrator:$versions.supportTestRunner",
+        testRules                                   : "androidx.test:rules:$versions.supportTestRunner",
+        testRunner                                  : "androidx.test:runner:$versions.supportTestRunner"
 ]

@@ -97,5 +97,16 @@ dependencies {
     testImplementation testLibraries.dataFactory
     androidTestImplementation testLibraries.junit
     androidTestImplementation testLibraries.junitExt
+    testImplementation testLibraries.testCore
+    testImplementation testLibraries.testRules
+    testImplementation testLibraries.testRunner
 
+    androidTestUtil testLibraries.testOrchestrator
+
+    testImplementation testLibraries.mockito
+    testImplementation testLibraries.mockitoInline
+    testImplementation testLibraries.mockitoAndroid
+    testImplementation testLibraries.mockWebServer
+    testImplementation testLibraries.robolectric
+    testImplementation testLibraries.room
 }
