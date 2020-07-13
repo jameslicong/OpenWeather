@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        applicationId "com.smilefactory.openweather"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // puts the exported Room database schema into a directory
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+
+        buildConfigField "String", "SERVER_URL", "\"https://api.openweathermap.org/data/2.5/\""
+        buildConfigField "String", "API_KEY", "\"829f17f48a23d16806bee898545e6593\""
+        buildConfigField "int", "DATABASE_VERSION", versions.database
+        buildConfigField "String", "DATABASE_NAME", "\"" + versions.databaseName + "\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation libraries.kotlinStdLib
+    implementation libraries.androidXCore
+    implementation libraries.androidXAppCompat
+    implementation libraries.androidXContraintLayout
+    implementation libraries.androidXLifeCycleExtensions
+    implementation libraries.androidXLifeCycleViewModel
+    implementation libraries.androidXRecyclerView
+    implementation libraries.androidXSwipeRefreshLayout
+    implementation libraries.androidXCardView
+
+    implementation libraries.googleMaterialDesign
+    // Dagger 2
+    api libraries.dagger
+    api(libraries.daggerAndroidSupport) {
+        exclude group: 'com.google.code.findbugs'
+    }
+
+    kapt libraries.daggerCompiler
+    kapt libraries.daggerProcessor
+
+    // GSON
+    implementation libraries.gson
+
+    // OkHttp
+    implementation libraries.okHttpLogging
+
+    // Retrofit
+    implementation libraries.retrofit
+    implementation libraries.retrofitGsonConverter
+    implementation libraries.retrofitRxJavaAdapter
+
+    // Room Database Persistent
+    implementation libraries.room
+    implementation libraries.roomRxJava
+    kapt libraries.roomProcessor
+
+    // RxJava and Android
+    implementation libraries.rxAndroid
+    implementation libraries.rxJava
+
+    // Timber Logging
+    implementation libraries.timber
+
+
+    testImplementation testLibraries.espresso
+    testImplementation testLibraries.dataFactory
+    androidTestImplementation testLibraries.junit
+    androidTestImplementation testLibraries.junitExt
+    testImplementation testLibraries.testCore
+    testImplementation testLibraries.testRules
+    testImplementation testLibraries.testRunner
+
+    androidTestUtil testLibraries.testOrchestrator
+
+    testImplementation testLibraries.mockito
+    testImplementation testLibraries.mockitoInline
+    testImplementation testLibraries.mockitoAndroid
+    testImplementation testLibraries.mockWebServer
+    testImplementation testLibraries.robolectric
+    testImplementation testLibraries.room
+}

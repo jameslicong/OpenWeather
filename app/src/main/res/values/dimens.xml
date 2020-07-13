@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_margin_extra_small">4dp</dimen>
+    <dimen name="screen_margin_small">8dp</dimen>
+    <dimen name="screen_margin">16dp</dimen>
+    <dimen name="screen_margin_large">32dp</dimen>
+    <dimen name="screen_margin_extra_large">64dp</dimen>
+    <dimen name="screen_margin_extra_extra_large">128dp</dimen>
+
+    <dimen name="typography_h2">60sp</dimen>
+    <dimen name="typography_h3">30sp</dimen>
+    <dimen name="typography_h4">28sp</dimen>
+    <dimen name="typography_h5">24sp</dimen>
+    <dimen name="typography_h6">18sp</dimen>
+    <dimen name="typography_h7">15sp</dimen>
+</resources>
