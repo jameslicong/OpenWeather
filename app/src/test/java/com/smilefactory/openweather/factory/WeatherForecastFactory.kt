@@ -7,12 +7,12 @@ object WeatherForecastFactory {
 
     private val FACTORY = DataFactory()
 
-    fun weatherForecastFromRemote(): WeatherForecast {
+    fun createWeatherForecast(): WeatherForecast {
         return WeatherForecast(
             id = FACTORY.getNumberBetween(1000000, 9999999).toLong(),
             coord = Coord(
-                lon = FACTORY.number.toDouble(),
-                lat = FACTORY.number.toDouble()),
+                lon = FACTORY.getNumberBetween(10, 99).toDouble(),
+                lat = FACTORY.getNumberBetween(10, 99).toDouble()),
             sys = Sys(
                 country = FACTORY.streetName,
                 timezone = FACTORY.getNumberBetween(10000, 99999).toLong(),
@@ -38,5 +38,13 @@ object WeatherForecastFactory {
             dt = FACTORY.getNumberBetween(100000000, 999999999).toLong(),
             name = FACTORY.name,
             isFavorite = false)
+    }
+
+    fun weatherForecastList(size: Int): WeatherForecastList {
+        var list = mutableListOf<WeatherForecast>()
+        for (index in 0 until size) {
+            list.add(createWeatherForecast())
+        }
+        return WeatherForecastList(cnt = size, list = list)
     }
 }
