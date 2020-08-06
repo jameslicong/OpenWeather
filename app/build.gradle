@@ -101,6 +101,7 @@ dependencies {
     testImplementation testLibraries.testRules
     testImplementation testLibraries.testRunner
 
+    testImplementation testLibraries.androidXCore
     androidTestUtil testLibraries.testOrchestrator
 
     testImplementation testLibraries.mockito
