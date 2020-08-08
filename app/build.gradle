@@ -45,6 +45,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -101,6 +107,7 @@ dependencies {
     testImplementation testLibraries.testRules
     testImplementation testLibraries.testRunner
 
+    testImplementation testLibraries.androidXCore
     androidTestUtil testLibraries.testOrchestrator
 
     testImplementation testLibraries.mockito

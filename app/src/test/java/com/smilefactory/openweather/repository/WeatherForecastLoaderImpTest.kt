@@ -16,7 +16,7 @@ import org.mockito.BDDMockito.given
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito.*
-import org.mockito.MockitoAnnotations.initMocks
+import org.mockito.MockitoAnnotations.openMocks
 import org.mockito.junit.MockitoJUnitRunner
 
 
@@ -37,7 +37,7 @@ class WeatherForecastLoaderImpTest {
 
     @Before
     fun setup() {
-        initMocks(this)
+        openMocks(this)
         classUnderTest = WeatherForecastLoaderImp(
             localLoader = localLoader,
             localSaver =  localSaver,

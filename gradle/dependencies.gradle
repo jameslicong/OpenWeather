@@ -1,7 +1,7 @@
 ext.versions = [
         // App values
-        name                 : '0.0.1',
-        code                 : 1,
+        name                 : '0.0.2',
+        code                 : 2,
         minSdk               : 21,
         targetSdk            : 29,
         compileSdk           : 29,
@@ -32,13 +32,14 @@ ext.versions = [
         timber                       : '4.7.1',
 
         // Test libraries
+        androidXCore                 : '2.1.0',
         espresso                     : '3.2.0',
         dataFactory                  : '0.8',
         junit                        : '4.12',
         junitExt                     : '1.1.1',
         mockito                      : '3.4.0',
         mockWebServer                : '4.8.0',
-        robolectric                  : '4.3.1',
+        robolectric                  : '4.3',
         supportTestRunner            : '1.1.0'
 
 ]
@@ -79,6 +80,7 @@ ext.libraries = [
 ]
 
 ext.testLibraries = [
+        androidXCore                                : "androidx.arch.core:core-testing:$versions.androidXCore",
         espresso                                    : "androidx.test.espresso:espresso-core:$versions.espresso",
         dataFactory                                 : "org.fluttercode.datafactory:datafactory:$versions.dataFactory",
         junit                                       : "junit:junit:$versions.junit",

@@ -11,7 +11,7 @@ import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions
-import org.mockito.MockitoAnnotations.initMocks
+import org.mockito.MockitoAnnotations.openMocks
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -25,7 +25,7 @@ class WeatherForecastUpdaterImpTest {
 
     @Before
     fun setup() {
-        initMocks(this)
+        openMocks(this)
         classUnderTest = WeatherForecastUpdaterImp(localSaver)
     }
 
