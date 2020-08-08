@@ -1,7 +1,7 @@
 package com.smilefactory.openweather.repository.local.room.database
 
 import androidx.room.Room
-import com.smilefactory.openweather.Application
+import com.smilefactory.openweather.utilities.android.Application
 import com.smilefactory.openweather.BuildConfig
 import dagger.Module
 import dagger.Provides

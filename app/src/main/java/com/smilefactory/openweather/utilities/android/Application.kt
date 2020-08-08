@@ -1,4 +1,4 @@
-package com.smilefactory.openweather
+package com.smilefactory.openweather.utilities.android
 
 import com.smilefactory.openweather.utilities.android.DaggerApplicationComponent
 import dagger.android.AndroidInjector
